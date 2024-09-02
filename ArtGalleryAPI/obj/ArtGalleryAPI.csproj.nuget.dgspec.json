@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\codingProjects\\ArtGalleryAPI\\ArtGalleryAPI.csproj": {}
+    "D:\\codingProjects\\ArtGalleryApp\\ArtGalleryAPI\\ArtGalleryAPI.csproj": {}
   },
   "projects": {
-    "D:\\codingProjects\\ArtGalleryAPI\\ArtGalleryAPI.csproj": {
+    "D:\\codingProjects\\ArtGalleryApp\\ArtGalleryAPI\\ArtGalleryAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\codingProjects\\ArtGalleryAPI\\ArtGalleryAPI.csproj",
+        "projectUniqueName": "D:\\codingProjects\\ArtGalleryApp\\ArtGalleryAPI\\ArtGalleryAPI.csproj",
         "projectName": "ArtGalleryAPI",
-        "projectPath": "D:\\codingProjects\\ArtGalleryAPI\\ArtGalleryAPI.csproj",
+        "projectPath": "D:\\codingProjects\\ArtGalleryApp\\ArtGalleryAPI\\ArtGalleryAPI.csproj",
         "packagesPath": "C:\\Users\\bemei\\.nuget\\packages\\",
-        "outputPath": "D:\\codingProjects\\ArtGalleryAPI\\obj\\",
+        "outputPath": "D:\\codingProjects\\ArtGalleryApp\\ArtGalleryAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -39,11 +39,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {

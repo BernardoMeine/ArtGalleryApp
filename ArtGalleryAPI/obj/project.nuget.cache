@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dsDmoP5mqXQ=",
+  "dgSpecHash": "076j3HqF0HzNMxkrXk2Cb+JwpvFwWUagUMLsLNRhzY8zgh1jZMiaE42Zb9WjqkYknODawbDH4tFu0zCe23pojA==",
   "success": true,
-  "projectFilePath": "D:\\codingProjects\\ArtGalleryAPI\\ArtGalleryAPI.csproj",
+  "projectFilePath": "D:\\codingProjects\\ArtGalleryApp\\ArtGalleryAPI\\ArtGalleryAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bemei\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\bemei\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
