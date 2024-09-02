@@ -1,0 +1,42 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="file"] {
+  padding: 10px;
+  background-color: #333333; /* Cinza escuro */
+  border: 2px solid #6a0dad; /* Roxo */
+  color: #ffffff;
+  border-radius: 4px;
+}
+
+input[type="text"]::placeholder,
+input[type="date"]::placeholder,
+input[type="number"]::placeholder {
+  color: #cccccc;
+}
+
+input[type="file"] {
+  padding: 5px;
+}
+
+button {
+  padding: 10px;
+  background-color: #6a0dad; /* Roxo */
+  border: 2px solid #333333; /* Cinza escuro */
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #5c0bb7; /* Roxo mais escuro ao passar o mouse */
+}

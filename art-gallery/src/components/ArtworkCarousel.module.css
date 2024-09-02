@@ -1,0 +1,44 @@
+.carouselContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.artworkCard {
+  background-color: #333;
+  border-radius: 12px;
+  padding: 12px;
+  width: 250px;
+  height: 350px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.navButton {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.navButton:hover {
+  background-color: #6a0dad;
+  color:black;
+}
