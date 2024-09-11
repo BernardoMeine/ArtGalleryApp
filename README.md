@@ -97,6 +97,4 @@ A estilização da aplicação foi feita usando **CSS Modules** para isolar os e
 
 A aplicação inclui um botão que, ao ser clicado, redireciona o usuário para o WhatsApp Web ou para o aplicativo do WhatsApp no celular. Isso facilita o contato direto com a galeria para mais informações.
 
-## Licença
 
-Este projeto está licenciado sob a licença MIT - consulte o arquivo LICENSE para obter mais detalhes.
