@@ -23,7 +23,7 @@ function ArtworkList() {
   };
 
   return (
-    <div>
+    <div className={styles.artworkListContainer}>
       <h2>Galeria de Arte</h2>
       <div className={styles.artworkGrid}>
         {Array.isArray(artworks) && artworks.length > 0 ? (

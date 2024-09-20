@@ -42,3 +42,22 @@
   background-color: #6a0dad;
   color:black;
 }
+
+.carouselContainer {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+  .carouselContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .artworkCard {
+    width: 100%;
+    max-width: 90%;
+  }
+}

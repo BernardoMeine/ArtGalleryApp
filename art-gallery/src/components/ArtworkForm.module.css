@@ -9,6 +9,14 @@
 input[type="text"],
 input[type="date"],
 input[type="number"],
+input[type="file"],
+button {
+  font-family: 'Lora', serif; /* A fonte que você escolheu */
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
 input[type="file"] {
   padding: 10px;
   background-color: #333333; /* Cinza escuro */
@@ -40,3 +48,21 @@ button {
 button:hover {
   background-color: #5c0bb7; /* Roxo mais escuro ao passar o mouse */
 }
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 300px; /* Limite máximo de largura */
+  margin: 0 auto; /* Centraliza o formulário */
+  padding: 20px;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+  .formContainer {
+    max-width: 90%; /* Expandir mais o formulário em telas pequenas */
+  }
+}
+

@@ -4,6 +4,7 @@ import axios from "./axiosConfig";
 import ArtworkForm from "./components/ArtworkForm";
 import ArtworkCarousel from "./components/ArtworkCarousel";
 import ArtworkList from "./components/ArtworkList";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 function App() {
   const [artworks, setArtworks] = useState([]);
@@ -21,6 +22,7 @@ function App() {
   return (
     <div>
       <h1>Galeria de Arte Virtual</h1>
+      <WhatsAppButton />
       <ArtworkForm />
       <ArtworkCarousel artworks={artworks} /> {/* Passando as obras como prop */}
       <ArtworkList />

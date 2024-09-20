@@ -4,3 +4,68 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Lora', serif;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.artworkCard {
+  width: 300px;
+  margin: 15px;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.artworkCard:hover {
+  transform: scale(1.05);
+}
+
+/* Estilos para telas menores */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .artworkCard {
+    width: 90%;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
+
+/* Estilos para telas muito pequenas (ex: smartphones) */
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+
+  .artworkCard {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  input[type="number"],
+  input[type="file"],
+  button {
+    font-size: 14px;
+  }
