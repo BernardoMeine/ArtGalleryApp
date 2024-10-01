@@ -1,9 +1,11 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
-import axios from "../axiosConfig";
+import api from "../axiosConfig";
 import styles from "./ArtworkForm.module.css";
 
-function ArtworkForm() {
+function ArtworkForm({ addArtwork }) {
   const [title, setTitle] = useState("");
   const [artist, setArtist] = useState("");
   const [creationDate, setCreationDate] = useState("");
@@ -16,13 +18,13 @@ function ArtworkForm() {
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setImageFile(reader.result.split(",")[1]);
+        setImageFile(reader.result.split(",")[1]); // Captura o base64 da imagem
       };
       reader.readAsDataURL(file);
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const artworkData = {
@@ -34,20 +36,23 @@ function ArtworkForm() {
       imageBase64: imageFile,
     };
 
-    axios
-      .post("api/Artworks", artworkData)
-      .then((response) => {
-        console.log("Obra enviada com sucesso:", response.data);
+    try {
+      if (window.confirm(`Deseja realmente adicionar a obra"?`)) {
+        const response = await api.post("/api/Artworks", artworkData);
+        console.log(response.data);
+        addArtwork(response.data); // Adiciona a nova obra à lista de obras no estado do App
+        // Limpa o formulário
         setTitle("");
         setArtist("");
         setCreationDate("");
         setTechnique("");
         setPrice("");
         setImageFile(null);
-      })
-      .catch((error) => {
-        console.error("Erro ao enviar a obra:", error);
-      });
+      }
+
+    } catch (error) {
+      console.error("Erro ao enviar a obra:", error);
+    }
   };
 
   return (
@@ -87,11 +92,17 @@ function ArtworkForm() {
         onChange={(e) => setPrice(e.target.value)}
         required
       />
-      <input type="file" accept="image/*" onChange={handleImageChange} required />
+      <input
+        type="file"
+        accept="image/*"
+        onChange={handleImageChange}
+        required
+      />
       <button type="submit">Enviar</button>
     </form>
   );
 }
 
 export default ArtworkForm;
+
 

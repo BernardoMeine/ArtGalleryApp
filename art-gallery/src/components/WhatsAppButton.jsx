@@ -8,13 +8,15 @@ const WhatsAppButton = () => {
 
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
 
+  const handleClick = () => {
+    window.open(whatsappLink, "_blank", "noopener,noreferrer");
+  };
+
   return (
-    <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-      <button className={styles.whatsappButton}>
-        <img src={whatsappIcon} alt="WhatsApp" className={styles.whatsappIcon} />
-        Contate-nos via WhatsApp
-      </button>
-    </a>
+    <button className={styles.whatsappButton} onClick={handleClick}>
+      <img src={whatsappIcon} alt="WhatsApp" className={styles.whatsappIcon} />
+      Contate-nos via WhatsApp
+    </button>
   );
 };
 
