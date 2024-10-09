@@ -4,15 +4,15 @@ import api from "./axiosConfig";
 import ArtworkForm from "./components/ArtworkForm";
 import ArtworkList from "./components/ArtworkList";
 import ArtworkCarousel from "./components/ArtworkCarousel";
+import styles from "./App.module.css";
 
 function App() {
   const [artworkProps, setArtworkProps] = useState([]);
 
   useEffect(() => {
-    // Função para buscar as obras de arte
     const fetchArtworks = async () => {
       try {
-        const response = await api.get("/api/Artworks");
+        const response = await api.get("/api/artworks");
         setArtworkProps(response.data);
       } catch (error) {
         console.error("Erro ao buscar as obras de arte:", error);
@@ -22,7 +22,6 @@ function App() {
     fetchArtworks();
   }, []);
 
-  // Função para adicionar uma nova obra à lista
   const addArtwork = (newArtwork) => {
     setArtworkProps((prevArtworks) => [...prevArtworks, newArtwork]);
   };
@@ -34,12 +33,10 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>Galeria de Arte Virtual</h1>
-      {/* Passa a função addArtwork para o ArtworkForm */}
+    <div className={styles.app}>
+      <h1 className={styles.title}>Galeria de Arte Virtual</h1>
       <ArtworkForm addArtwork={addArtwork} />
       <ArtworkCarousel artworkProps={artworkProps} />
-      {/* Passa a prop artworkProps e a função deleteArtwork para o ArtworkList */}
       <ArtworkList artworkProps={artworkProps} onDelete={deleteArtwork} />
     </div>
   );

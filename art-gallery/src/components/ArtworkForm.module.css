@@ -1,67 +1,57 @@
-.formContainer {
+.artworkForm {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  width: 300px;
-  margin: 0 auto;
+  max-width: 600px; /* Centraliza o formulário */
+  margin: 0 auto; /* Centraliza na página */
+  padding: 20px;
+  background-color: #333; /* Cor de fundo leve */
+  color: #fff;
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
-input[type="text"],
-input[type="date"],
-input[type="number"],
-input[type="file"],
-button {
-  font-family: 'Lora', serif; /* A fonte que você escolheu */
-}
-
-input[type="text"],
-input[type="date"],
-input[type="number"],
-input[type="file"] {
+.inputField {
+  font-family: 'Lora', serif;
+  font-size: 1rem;
   padding: 10px;
-  background-color: #333333; /* Cinza escuro */
-  border: 2px solid #6a0dad; /* Roxo */
-  color: #ffffff;
-  border-radius: 4px;
+  margin-bottom: 20px;
+  border: 2px solid #4B0082; /* Borda roxa */
+  border-radius: 8px;
+  background-color: #f0f0f0; /* Cor de fundo cinza claro */
+  transition: border-color 0.3s ease;
 }
 
-input[type="text"]::placeholder,
-input[type="date"]::placeholder,
-input[type="number"]::placeholder {
-  color: #cccccc;
+.inputField:focus {
+  border-color: #7B68EE; /* Cor da borda em foco */
 }
 
-input[type="file"] {
-  padding: 5px;
-}
-
-button {
+.fileInput {
+  margin-bottom: 20px;
   padding: 10px;
-  background-color: #6a0dad; /* Roxo */
-  border: 2px solid #333333; /* Cinza escuro */
-  color: #ffffff;
+  border: 2px dashed #4B0082; /* Borda tracejada para diferenciar o upload */
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.submitButton {
+  font-family: 'Lora', serif;
+  font-size: 1.2rem;
+  padding: 12px;
+  background-color: #4B0082; /* Cor roxa */
+  color: white;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  border-radius: 4px;
   transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #5c0bb7; /* Roxo mais escuro ao passar o mouse */
-}
-
-.formContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
-  max-width: 300px; /* Limite máximo de largura */
-  margin: 0 auto; /* Centraliza o formulário */
-  padding: 20px;
+.submitButton:hover {
+  background-color: #7B68EE; /* Efeito hover */
 }
 
 /* Estilos para dispositivos móveis */
 @media (max-width: 768px) {
-  .formContainer {
+  .artworkForm {
     max-width: 90%; /* Expandir mais o formulário em telas pequenas */
   }
 }

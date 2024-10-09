@@ -1,15 +1,14 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import axios from "../axiosConfig"; // Certifique-se de importar corretamente a configuração do Axios
+import axios from "../axiosConfig";
 import styles from "./ArtworkCard.module.css";
 
 const ArtworkCard = ({ artwork, onDelete }) => {
-
   const handleDelete = () => {
     if (window.confirm(`Deseja realmente excluir a obra "${artwork.title}"?`)) {
       axios
-        .delete(`api/Artworks/${artwork.id}`)
+        .delete(`api/artworks/${artwork.id}`)
         .then(() => {
           onDelete(artwork.id);
         })
@@ -29,7 +28,7 @@ const ArtworkCard = ({ artwork, onDelete }) => {
       <h3>{artwork.title}</h3>
       <p>Artista: {artwork.artist}</p>
       <p>Técnica: {artwork.technique}</p>
-      <p>Preço: R$ {artwork.price}</p>
+      <p className={styles.price}>Preço: R$ {artwork.price}</p>
       <button className={styles.deleteButton} onClick={handleDelete}>
         Excluir
       </button>

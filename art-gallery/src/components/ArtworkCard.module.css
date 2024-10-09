@@ -1,34 +1,33 @@
 .artworkCard {
-  background-color: #333; /* Fundo cinza escuro */
-  border-radius: 12px; /* Bordas arredondadas */
+  background-color: #333;
+  border-radius: 12px;
   padding: 12px;
   width: 250px;
-  height: 350px;
-  position: relative;
-  color: #fff; /* Texto branco */
+  min-height: 350px;
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
   overflow: hidden;
 }
 
 .deleteButton {
-  position: absolute;
-  bottom: 10px;
-  right: 15px;
-  background-color: #d9534f; /* Cor vermelha para o botão de exclusão */
+  background-color: #d9534f;
   border: none;
   color: white;
-  padding: 5px 10px;
+  font-weight: bold;
+  padding: 8px 16px;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 10px;
+  width: 80%;
 }
 
 .deleteButton:hover {
-  background-color: #c9302c; /* Cor para hover */
+  background-color: #c9202f;
 }
 
 .image {
@@ -41,6 +40,10 @@
 h3 {
   font-size: 1.2rem;
   margin: 10px 0 5px;
+}
+
+.price {
+  margin-bottom: 5px;
 }
 
 p {

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable-next-line no-unused-vars */
 import React, { useState } from "react";
 import api from "../axiosConfig";
 import styles from "./ArtworkForm.module.css";
@@ -38,7 +38,7 @@ function ArtworkForm({ addArtwork }) {
 
     try {
       if (window.confirm(`Deseja realmente adicionar a obra"?`)) {
-        const response = await api.post("/api/Artworks", artworkData);
+        const response = await api.post("/api/artworks", artworkData);
         console.log(response.data);
         addArtwork(response.data); // Adiciona a nova obra à lista de obras no estado do App
         // Limpa o formulário
@@ -56,50 +56,60 @@ function ArtworkForm({ addArtwork }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles.formContainer}>
+    <form className={styles.artworkForm} onSubmit={handleSubmit}>
+      <label htmlFor="title">Título da Obra</label>
       <input
+        id="title"
         type="text"
-        placeholder="Título"
-        value={title}
+        value={title || ''}  // Evitar undefined
         onChange={(e) => setTitle(e.target.value)}
-        required
+        placeholder="Nome da Obra"
+        className={styles.inputField}
       />
+
+      <label htmlFor="artist">Artista</label>
       <input
+        id="artist"
         type="text"
-        placeholder="Artista"
-        value={artist}
+        value={artist || ''}  // Evitar undefined
         onChange={(e) => setArtist(e.target.value)}
-        required
+        placeholder="Nome do Artista"
+        className={styles.inputField}
       />
+
+      <label htmlFor="price">Preço</label>
       <input
+        id="price"
+        type="number"
+        value={price || ''}  // Evitar undefined
+        onChange={(e) => setPrice(e.target.value)}
+        placeholder="Preço em R$"
+        className={styles.inputField}
+      />
+
+      <label htmlFor="date">Data de criação</label>
+      <input
+        id="date"
         type="date"
         placeholder="Data de Criação"
         value={creationDate}
         onChange={(e) => setCreationDate(e.target.value)}
         required
+        className={styles.inputField}
       />
+
+      <label htmlFor="image">Imagem da Obra</label>
       <input
-        type="text"
-        placeholder="Técnica"
-        value={technique}
-        onChange={(e) => setTechnique(e.target.value)}
-        required
-      />
-      <input
-        type="number"
-        placeholder="Preço"
-        value={price}
-        onChange={(e) => setPrice(e.target.value)}
-        required
-      />
-      <input
+        id="image"
         type="file"
         accept="image/*"
         onChange={handleImageChange}
-        required
+        className={styles.fileInput}
       />
-      <button type="submit">Enviar</button>
+
+      <button type="submit" className={styles.submitButton}>Cadastrar Obra</button>
     </form>
+
   );
 }
 

@@ -1,0 +1,17 @@
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  font-size: 3rem; /* Aumenta o tamanho do título */
+  font-weight: 700; /* Deixa o título mais encorpado */
+  color: #4B0082; /* Um roxo escuro elegante */
+  text-align: center; /* Centraliza o título na página */
+  margin-top: 40px;
+  margin-bottom: 50px; /* Aumenta o espaço abaixo do título */
+  background: linear-gradient(90deg, rgba(75,0,130,1) 0%, rgba(123,104,238,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -1,29 +1,18 @@
 ﻿using ArtGalleryAPI.Database;
+using ArtGalleryAPI.DTOs;
 using ArtGalleryAPI.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace ArtGalleryAPI.Controllers;
-
-[Route("api/[controller]")]
+[Route("api/artworks")]
 [ApiController]
-public class ArtworksController : ControllerBase
+public class ArtworksCommandsController : ControllerBase
 {
     private readonly GalleryContext _context;
 
-    public ArtworksController(GalleryContext context)
+    public ArtworksCommandsController(GalleryContext context)
     {
         _context = context;
-    }
-
-    // GET: api/artworks
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<Artwork>>> GetArtworks()
-    {
-        return await _context
-            .Artworks
-            .AsNoTracking()
-            .ToListAsync();
     }
 
     // POST: api/artworks
@@ -57,7 +46,7 @@ public class ArtworksController : ControllerBase
         _context.Artworks.Add(artwork);
         await _context.SaveChangesAsync();
 
-        return CreatedAtAction(nameof(GetArtworks), new { id = artwork.Id }, artwork);
+        return CreatedAtAction("GetArtworkById", "ArtworksQueries", new { id = artwork.Id }, artwork);
     }
 
     // DELETE: api/artworks/{id}
@@ -65,12 +54,11 @@ public class ArtworksController : ControllerBase
     public async Task<IActionResult> DeleteArtwork(int id)
     {
         var artwork = await _context.Artworks.FindAsync(id);
-        if (artwork == null)
+        if (artwork is null)
         {
             return NotFound();
         }
 
-        // Verifica se há uma imagem associada à obra e a deleta
         if (!string.IsNullOrEmpty(artwork.ImageUrl))
         {
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), artwork.ImageUrl);
